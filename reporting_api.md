@@ -41,9 +41,9 @@ Add hr section support for specify time info.
 #### 2.
 |Request|Description|Remark|
 | -----|-----|----|
-|GET /api/applications/{PUBLISHER ID}?{key=API TOKEN}&{dt=yyyymmdd]}&[cur=usd]&[region=[all &#124 region code]]|return statistic data by dt| cur and region are optional parameters|
-|GET /api/applications/{PUBLISHER ID}?{key=API TOKEN}&{dt=yyyymmdd}&{hr=hh}&[cur=usd]&[region=[all &#124 region code]]|return statistic data by dt and hr | cur and region are optional parameters|
-|GET /api/applications/{PUBLISHER ID}?{key=API TOKEN}&{dt_start=yyyymmdd}&{dt_end=yyyymmdd}&[cur=usd]&[region=[all &#124 region code]]|return statistic data between dt_start and dt_end | cur and region are optional parameters|
+|GET /api/applications/{PUBLISHER ID}?{key=API TOKEN}&{dt=yyyymmdd]}&[cur=usd]&[region=[all &brvbar; region code]]|return statistic data by dt| cur and region are optional parameters|
+|GET /api/applications/{PUBLISHER ID}?{key=API TOKEN}&{dt=yyyymmdd}&{hr=hh}&[cur=usd]&[region=[all &brvbar; region code]]|return statistic data by dt and hr | cur and region are optional parameters|
+|GET /api/applications/{PUBLISHER ID}?{key=API TOKEN}&{dt_start=yyyymmdd}&{dt_end=yyyymmdd}&[cur=usd]&[region=[all &brvbar; region code]]|return statistic data between dt_start and dt_end | cur and region are optional parameters|
 
 ##### Example
 ```php
