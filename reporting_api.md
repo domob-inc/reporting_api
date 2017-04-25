@@ -11,7 +11,7 @@ The media statistics are returned as json lists, each containing a certain count
 
 region=SPECIFIC_REGION_CODE
 
-You can use this method to obtain specific country statistics. You can find the regoin code map at the bottom of the Region Code appendix.
+You can use this method to obtain specific country statistics. You can find the regoin code map with ISO_3166-3(https://zh.wikipedia.org/wiki/ISO_3166-3), and you can search the region code in https://countrycode.org/
 
 ### v1.0.2
 Add USD($) currency type for reporting. you can add a "cur=usd" query param to get reporting currency type as USD, "cur" param is optional, default currency type is RMB. (using bid exchange rate from Yahoo! and updated by day, this number should be only used for reference, actual exchange rate may different.)
@@ -28,14 +28,14 @@ Add hr section support for specify time info.
 
 ```php
 [
-	{  
-	"deverid": "62555", //Domob developer id
-    "pubid" : "XXXXX", //publisher id  of the app
-    "name" : "割绳子", //name of the app
-    "platform" : "iOS", //platform
-    "status" : "1" //app status，0 for running,  1 for paused
-	},
-	… …
+    {  
+        "deverid": "62555", //Domob developer id
+        "pubid" : "XXXXX", //publisher id  of the app
+        "name" : "割绳子", //name of the app
+        "platform" : "iOS", //platform
+        "status" : "1" //app status，0 for running,  1 for paused
+    },
+    … …
 ]
 ```
 #### 2.
@@ -207,7 +207,7 @@ bash: curl -X GET \
             -G 'http://dvx.domob.cn/api/applications/96Z...-edY/wTBSK' \
             -d 'key=NTA0Mzk4MTgwNzA2..2MjNhZWNiNzRm' \
             -d 'dt=20160401' \
-			-d 'region=all'
+            -d 'region=all'
 
 return:
 
@@ -220,7 +220,7 @@ return:
 		"clk":"83",
 		"revenue":11912120,
 		"ecpm":37.82, 
-		“region” :11560000
+		"region" :cn
 	},
 	{
 		"dt":"20170401",
@@ -230,7 +230,7 @@ return:
 		"clk":"83",
 		"revenue":11912120,
 		"ecpm”:37.82,
-		region” :11560000
+		"region" :aq
 	}
 	......
 ]
@@ -242,7 +242,7 @@ bash: curl -X GET \
             -G 'http://dvx.domob.cn/api/applications/96Z...-edY/wTBSK' \
             -d 'key=NTA0Mzk4MTgwNzA2..2MjNhZWNiNzRm' \
             -d 'dt=20160401' \
-			-d 'region=11560000'
+            -d 'region=cn'
 
 return:
 {
@@ -253,260 +253,7 @@ return:
 	"clk":"83",
 	"revenue":11912120,
 	"ecpm":37.82, 
-	“region” :11560000
+	"region" :cn
 }
 
 ```
-
-#### Appendix 1:
-
-| code | region |
-| -------- | -----: |
-|71000000|Taiwan|
-|81000000|Hong Kong|
-|82000000|Macao|
-|1020000000|Andorra|
-|1784000000|The United Arab Emirates|
-|1004000000|Afghanistan|
-|1028000000|Antigua and Barbuda|
-|1660000000|Anguilla|
-|1008000000|Albania|
-|1051000000|Armenia|
-|1024000000|Angola|
-|1010000000|Antarctica|
-|1032000000|Argentina|
-|1016000000|American Samoa|
-|1040000000|Austria|
-|1036000000|Australia|
-|1533000000|Aruba|
-|1248000000|Oran Islands|
-|1031000000|Azerbaijan|
-|1070000000|Bosnia and Herzegovina|
-|1052000000|Barbados|
-|1050000000|Bengal|
-|1056000000|Belgium|
-|1854000000|burkina faso|
-|1100000000|Bulgaria|
-|1048000000|Bahrain|
-|1108000000|burundi|
-|1204000000|Benin|
-|1652000000|Saint-Barthelemy|
-|1060000000|Bermuda|
-|1096000000|Brunei|
-|1068000000|bolivia|
-|1535000000|Caribbean Netherlands|
-|1076000000|Brazil|
-|1044000000|Bahamas|
-|1064000000|Bhutan|
-|1074000000|Bouvet Island|
-|1072000000|botswana|
-|1112000000|Belarus|
-|1084000000|Belize|
-|1124000000|Canada|
-|1166000000|Cocos Islands|
-|1180000000|Congo (DRC)|
-|1140000000|Central African|
-|1178000000|Congo (cloth)|
-|1756000000|Switzerland|
-|1384000000|Cote d'Ivoire|
-|1184000000|Cook Islands|
-|1152000000|Chile|
-|1120000000|Cameroon|
-|1156000000|China|
-|1170000000|Columbia|
-|1188000000|Costa Rica|
-|1192000000|Cuba|
-|1132000000|Cape Verde|
-|1162000000|Christmas Island|
-|1196000000|Cyprus|
-|1203000000|Czech|
-|1276000000|Germany|
-|1262000000|Djibouti|
-|1208000000|Denmark|
-|1212000000|Dominica|
-|1214000000|Dominican|
-|1012000000|Algeria|
-|1218000000|Ecuador|
-|1233000000|Estonia|
-|1818000000|Egypt|
-|1732000000|Western Sahara|
-|1232000000|Eritrea|
-|1724000000|Spain|
-|1231000000|Ethiopia|
-|1246000000|Finland|
-|1242000000|Fiji Islands|
-|1238000000|Malvinas Islands (Falkland Islands)|
-|1583000000|Micronesia|
-|1234000000|Faroe Islands|
-|1250000000|France|
-|1266000000|Gabon|
-|1826000000|Britain|
-|1308000000|Grenada|
-|1268000000|Georgia|
-|1254000000|French Guiana|
-|1831000000|Guernsey|
-|1288000000|Ghana|
-|1292000000|Gibraltar|
-|1304000000|Greenland|
-|1270000000|Gambia|
-|1324000000|Guinea|
-|1312000000|Gua de Ropp|
-|1226000000|Equatorial Guinea|
-|1300000000|Greece|
-|1239000000|South Georgia and the South Sandwich Islands|
-|1320000000|Guatemala|
-|1316000000|Guam|
-|1624000000|Guinea-Bissau|
-|1328000000|Guyana|
-|1334000000|Hird and Macdonald Islands|
-|1340000000|Honduras|
-|1191000000|Croatia|
-|1332000000|Haiti|
-|1348000000|Hungary|
-|1360000000|Indonesia|
-|1372000000|Ireland|
-|1376000000|Israel|
-|1833000000|The Isle of man.|
-|1356000000|India|
-|1086000000|British India Ocean Territory|
-|1368000000|Iraq|
-|1364000000|Iran|
-|1352000000|Iceland|
-|1380000000|Italy|
-|1832000000|Jersey|
-|1388000000|Jamaica|
-|1400000000|Jordan|
-|1392000000|Japan|
-|1404000000|Kenya|
-|1417000000|Kyrgyzstan|
-|1116000000|Cambodia|
-|1296000000|Kiribati|
-|1174000000|Comoros|
-|1659000000|Saint Kitts and Nevis|
-|1408000000|North Korea|
-|1410000000|The Republic of Korea|
-|1414000000|Kuwait|
-|1136000000|Cayman Islands|
-|1398000000|Kazakhstan|
-|1418000000|Laos|
-|1422000000|Lebanon|
-|1662000000|Saint Lucia|
-|1438000000|Liechtenstein|
-|1144000000|Sri Lanka|
-|1430000000|Liberia|
-|1426000000|Lesotho|
-|1440000000|Lithuania|
-|1442000000|Luxembourg|
-|1428000000|Latvia|
-|1434000000|Libya|
-|1504000000|Morocco|
-|1492000000|Monaco|
-|1498000000|Moldova|
-|1499000000|Montenegro|
-|1663000000|saint martin|
-|1450000000|Madagascar|
-|1584000000|Marshall Islands|
-|1807000000|Macedonia|
-|1466000000|Mali|
-|1104000000|Myanmar|
-|1496000000|Mongolia; Mongolia|
-|1580000000|Northern Mariana Islands|
-|1474000000|Martinique|
-|1478000000|Mauritania|
-|1500000000|Montserrat|
-|1470000000|Malta|
-|1480000000|Mauritius|
-|1462000000|Maldives|
-|1454000000|Malawi|
-|1484000000|Mexico|
-|1458000000|Malaysia|
-|1508000000|Mozambique|
-|1516000000|Namibia|
-|1540000000|New Caledonia|
-|1562000000|Niger|
-|1574000000|Norfolk Island|
-|1566000000|Nigeria|
-|1558000000|Nicaragua|
-|1528000000|Netherlands|
-|1578000000|Norway|
-|1524000000|Nepal|
-|1520000000|Nauru|
-|1570000000|Niue|
-|1554000000|New Zealand|
-|1512000000|Oman|
-|1591000000|Panama|
-|1604000000|Peru|
-|1258000000|French Polynesia|
-|1598000000|papua new guinea|
-|1608000000|The Philippines|
-|1586000000|Pakistan|
-|1616000000|poland|
-|1666000000|Saint Pierre and Miquelon|
-|1612000000|Pitt Kaine Islands|
-|1630000000|Puerto Rico|
-|1275000000|Palestine|
-|1620000000|Portugal|
-|1585000000|Palau|
-|1600000000|Paraguay|
-|1634000000|Qatar|
-|1638000000|Reunion|
-|1642000000|Romania|
-|1688000000|Serbia|
-|1643000000|Russia|
-|1646000000|Rwanda|
-|1682000000|Saudi Arabia|
-|1090000000|Solomon Islands|
-|1690000000|Seychelles|
-|1729000000|Sultan|
-|1752000000|Sweden|
-|1702000000|Singapore|
-|1654000000|Helena|
-|1705000000|Slovenia|
-|1744000000|Svalbard and Jan Mayen|
-|1703000000|Slovakia|
-|1694000000|sierra leone|
-|1674000000|San Marino|
-|1686000000|Senegal|
-|1706000000|Somalia|
-|1740000000|Suriname|
-|1728000000|South Sudan|
-|1678000000|Sao Tome and Principe|
-|1222000000|Salvatore|
-|1760000000|Syria|
-|1748000000|Swaziland|
-|1796000000|Turks and Caicos Islands|
-|1148000000|Chad|
-|1260000000|French Southern Territories|
-|1768000000|Togo|
-|1764000000|Thailand|
-|1762000000|Tajikistan|
-|1772000000|Tokelau|
-|1626000000|Timor-Leste|
-|1795000000|Turkmenistan|
-|1788000000|Tunisia|
-|1776000000|Tonga|
-|1792000000|Turkey|
-|1780000000|Trinidad and Tobago|
-|1798000000|Tuvalu|
-|1834000000|Tanzania|
-|1804000000|Ukraine|
-|1800000000|Uganda|
-|1581000000|Small islands outside the United States|
-|1840000000|U.S.A|
-|1858000000|Uruguay|
-|1860000000|Uzbekistan|
-|1336000000|Vatican|
-|1670000000|Saint Vincent and the Grenadines|
-|1862000000|Venezuela|
-|1092000000|British Virgin Islands|
-|1850000000|Virgin Islands|
-|1704000000|Vietnam|
-|1548000000|Vanuatu|
-|1876000000|Wallis and Futuna|
-|1882000000|Samoa|
-|1887000000|Yemen|
-|1175000000|Mayotte|
-|1710000000|South Africa|
-|1894000000|Zambia|
-|1716000000|zimbabwe|
-|1000000000|Global|
