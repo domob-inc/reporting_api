@@ -11,7 +11,7 @@ The media statistics are returned as json lists, each containing a certain count
 
 region=SPECIFIC_REGION_CODE
 
-You can use this method to obtain specific country statistics. You can find the regoin code map with ISO_3166-3(https://en.wikipedia.org/wiki/ISO_3166-3_alpha-2), and you can search the region code in https://countrycode.org/
+You can use this method to obtain specific country statistics. You can find the regoin code map with ISO_3166-1(https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2), and you can search the region code in https://countrycode.org/
 
 ### v1.0.2
 Add USD($) currency type for reporting. you can add a "cur=usd" query param to get reporting currency type as USD, "cur" param is optional, default currency type is RMB. (using bid exchange rate from Yahoo! and updated by day, this number should be only used for reference, actual exchange rate may different.)
